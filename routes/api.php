@@ -34,7 +34,6 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 });
 Route::get('/products/{id}', [ProductController::class, 'show']);
 Route::post('/products', [ProductController::class, 'store']);
-Route::post('/checkout', [OrderController::class, 'checkout']);
 Route::post('/callback', [OrderController::class, 'callback']);
 Route::get('/test', [PaymentController::class, 'test']);
 Route::get('/order-chart', [OrderController::class, 'orderChart']);
@@ -76,6 +75,8 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
     
     Route::get('/invoice-user/{id}', [InvoicesController::class, 'showAllUserInvoices']);
     Route::apiResource('inv',InvoicesController::class);
+
+    Route::post('/courier-cost', [CourierController::class, 'getRajaongkirCost']);
 });
 
 

@@ -34,7 +34,8 @@ class CreateInvoice
             'customer_id' =>  $requestData['customer_id'],
             'invoice_date' => now(),
             'total_amount' => $requestData['paymentAmount'],
-            'status' => 'Unpaid'
+            'status' => 'Unpaid',
+            'payment_url' => '',
         ]);
         foreach ($orderDetail as $item) {
             $price = Product::find($item->product_id)->price;

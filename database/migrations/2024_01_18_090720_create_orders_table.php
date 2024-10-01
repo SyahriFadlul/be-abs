@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->integer('total_amount');
+            $table->integer('shipment_cost');
             $table->enum('status', ['pending', 'completed']);
             $table->timestamp('order_date')->useCurrent();
             $table->timestamps();

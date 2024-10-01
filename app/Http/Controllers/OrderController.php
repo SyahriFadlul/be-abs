@@ -57,7 +57,8 @@ class OrderController extends Controller
                     $qty = isset($qtys[$key]) ? $qtys[$key] : 1;
                     $order->orderDetails()->create([
                         'product_id' => $id,
-                        'qty' => $qty
+                        'qty' => $qty,
+                        'price_line' => Product::find($id)->price ?? 0,
                     ]);                                
                 };   
     
@@ -76,7 +77,8 @@ class OrderController extends Controller
             $qty = isset($qtys[$key]) ? $qtys[$key] : 1;
             $order->orderDetails()->create([
                 'product_id' => $id,
-                'qty' => $qty
+                'qty' => $qty,
+                'price_line' => Product::find($id)->price ?? 0,
             ]);                                
         };                     
         return $order->id;

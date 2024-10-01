@@ -27,6 +27,7 @@ return [
         'https://cow-expert-plainly.ngrok-free.app',
         'http://localhost:5173',
         'http://localhost:8000',
+        'http://localhost:8888',
         'https://amoebabiolab.netlify.app',     
     ],
 

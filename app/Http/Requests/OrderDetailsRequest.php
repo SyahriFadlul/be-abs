@@ -25,6 +25,7 @@ class OrderDetailsRequest extends FormRequest
             'produtc_id' => ['required'],
             'order_id' => ['required'],
             'qty' => ['required'],
+            'price_line' => ['required', 'numeric'],
         ];
     }
 }
